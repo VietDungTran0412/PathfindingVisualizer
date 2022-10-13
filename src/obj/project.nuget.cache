@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "RvRGihrrMkNyt/Nb8Cra3ELleTNjfVz0kK3MLuyy5+dGHIlFX/BC6Qc+HVdwdwdHjA8y5bjN46EzrNHplV9+aQ==",
+  "success": true,
+  "projectFilePath": "/Users/vietdung13x3/Desktop/OOPAssignment/CustomProgram/CustomProgram.csproj",
+  "expectedPackageFiles": [
+    "/Users/vietdung13x3/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/vietdung13x3/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.27/microsoft.netcore.app.host.osx-x64.3.1.27.nupkg.sha512",
+    "/Users/vietdung13x3/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
