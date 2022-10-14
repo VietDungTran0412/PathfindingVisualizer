@@ -7,7 +7,7 @@ namespace CustomProgram
     {
         private INodeCollection _grid;
         private HashSet<AbstractNode> _visited;
-        public NodeIterator(Grid grid)
+        public NodeIterator(INodeCollection grid)
         {
             _grid = grid;
             _visited = new HashSet<AbstractNode>();
@@ -69,22 +69,18 @@ namespace CustomProgram
         }
         public Coordinate GetTop(AbstractNode node)
         {
-            if (node.Position.Row == 0) return null;
             return new Coordinate(node.Position.Row - 1, node.Position.Column);
         }
         public Coordinate GetBottom(AbstractNode node)
         {
-            if (node.Position.Row == _grid.GetSize()) return null;
             return new Coordinate(node.Position.Row + 1, node.Position.Column);
         }
         public Coordinate GetLeft(AbstractNode node)
         {
-            if (node.Position.Column == 0) return null;
             return new Coordinate(node.Position.Row, node.Position.Column - 1);
         }
         public Coordinate GetRight(AbstractNode node)
         {
-            if (node.Position.Column == _grid.GetSize()) return null;
             return new Coordinate(node.Position.Row , node.Position.Column + 1);
         }
     }

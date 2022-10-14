@@ -32,7 +32,6 @@ namespace CustomProgram
         }
         public override AbstractNode NextNode()
         {
-            if (!HasNext()) return null;
             AbstractNode cur = _st.Pop();
             _path.Add(cur);
             

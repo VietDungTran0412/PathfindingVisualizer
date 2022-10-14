@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/vietdung13x3/Desktop/OOPAssignment/CustomProgram/CustomProgram.csproj": {}
+    "/Users/vietdung13x3/Desktop/OOPAssignment/CustomProgram/src/CustomProgram.csproj": {}
   },
   "projects": {
-    "/Users/vietdung13x3/Desktop/OOPAssignment/CustomProgram/CustomProgram.csproj": {
+    "/Users/vietdung13x3/Desktop/OOPAssignment/CustomProgram/src/CustomProgram.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vietdung13x3/Desktop/OOPAssignment/CustomProgram/CustomProgram.csproj",
+        "projectUniqueName": "/Users/vietdung13x3/Desktop/OOPAssignment/CustomProgram/src/CustomProgram.csproj",
         "projectName": "CustomProgram",
-        "projectPath": "/Users/vietdung13x3/Desktop/OOPAssignment/CustomProgram/CustomProgram.csproj",
+        "projectPath": "/Users/vietdung13x3/Desktop/OOPAssignment/CustomProgram/src/CustomProgram.csproj",
         "packagesPath": "/Users/vietdung13x3/.nuget/packages/",
-        "outputPath": "/Users/vietdung13x3/Desktop/OOPAssignment/CustomProgram/obj/",
+        "outputPath": "/Users/vietdung13x3/Desktop/OOPAssignment/CustomProgram/src/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/vietdung13x3/.nuget/NuGet/NuGet.Config"

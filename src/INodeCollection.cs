@@ -9,6 +9,7 @@ namespace CustomProgram
         public Queue<AbstractNode> GetDestinationQueue();
         public NodeIterator CreateDepthFirstIterator();
         public NodeIterator CreateBreadthFirstIterator();
+        public AStarIterator CreateAStarIterator();
         public AbstractNode Fetch(Coordinate coordinate);
         public void UpdateScreen();
     }

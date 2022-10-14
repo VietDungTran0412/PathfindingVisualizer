@@ -1,35 +1,30 @@
-﻿<Properties StartupConfiguration="{469165E8-8226-4E5D-BF2C-CF30F950FBA7}|Default">
+﻿<Properties>
+  <DisabledProjects>
+    <String>CustomProgram.csproj</String>
+  </DisabledProjects>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BreadthFirstSeach.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/AStarIterator.cs">
     <Files>
-      <File FileName="Program.cs" Line="15" Column="45" />
-      <File FileName="Constants.cs" Line="1" Column="1" />
-      <File FileName="Shape.cs" Line="30" Column="29" />
-      <File FileName="Rectangle.cs" Line="15" Column="10" />
-      <File FileName="Coordinate.cs" Line="10" Column="24" />
-      <File FileName="NormalNode.cs" Line="17" Column="42" />
-      <File FileName="WallNode.cs" Line="17" Column="55" />
-      <File FileName="DestinationNode.cs" Line="22" Column="1" />
-      <File FileName="NodeIterator.cs" Line="33" Column="86" />
-      <File FileName="DepthFirstIterator.cs" Line="6" Column="1" />
-      <File FileName="PathFinding.cs" Line="33" Column="6" />
-      <File FileName="Grid.cs" Line="30" Column="51" />
-      <File FileName="INodeCollection.cs" Line="11" Column="56" />
+      <File FileName="Program.cs" Line="15" Column="73" />
+      <File FileName="NodeIterator.cs" Line="22" Column="29" />
+      <File FileName="DepthFirstIterator.cs" Line="27" Column="25" />
+      <File FileName="Grid.cs" Line="16" Column="69" />
+      <File FileName="INodeCollection.cs" Line="11" Column="58" />
       <File FileName="NodeFactory.cs" Line="55" Column="1" />
       <File FileName="AbstractNode.cs" Line="22" Column="39" />
-      <File FileName="IGetPath.cs" Line="10" Column="6" />
-      <File FileName="DepthFirstSeach.cs" Line="6" Column="1" />
-      <File FileName="BreadthFirstIterator.cs" Line="24" Column="30" />
-      <File FileName="BreadthFirstSeach.cs" Line="34" Column="16" />
+      <File FileName="IGetPath.cs" Line="9" Column="33" />
+      <File FileName="DepthFirstSeach.cs" Line="33" Column="30" />
+      <File FileName="BreadthFirstIterator.cs" Line="22" Column="27" />
+      <File FileName="BreadthFirstSeach.cs" Line="31" Column="39" />
+      <File FileName="MenuScene.cs" Line="24" Column="68" />
+      <File FileName="AStarIterator.cs" Line="25" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="CustomProgram" expanded="True">
-            <Node name="CustomProgram" expanded="True" />
-          </Node>
+          <Node name="CustomProgram" expanded="True" />
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -40,5 +35,4 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.CustomProgram PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

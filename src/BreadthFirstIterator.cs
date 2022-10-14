@@ -50,8 +50,7 @@ namespace CustomProgram
             return _shortestpath;
         }
         public override AbstractNode NextNode()
-        {
-            if (!HasNext()) return null;
+        { 
             AbstractNode cur = _q.Dequeue();
             AbstractNode temp;
             Highlight(cur);

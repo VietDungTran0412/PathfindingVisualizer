@@ -29,6 +29,10 @@ namespace CustomProgram
         {
             return new BreadthFirstIterator(this);
         }
+        public AStarIterator CreateAStarIterator()
+        {
+            return new AStarIterator(this);
+        }
         public int GetSize()
         {
             return _factory.Size;

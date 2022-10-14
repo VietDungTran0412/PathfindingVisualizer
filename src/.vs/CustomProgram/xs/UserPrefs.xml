@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{469165E8-8226-4E5D-BF2C-CF30F950FBA7}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="DistanceHeap.cs">
+    <Files>
+      <File FileName="AStarIterator.cs" Line="66" Column="43" />
+      <File FileName="Program.cs" Line="26" Column="38" />
+      <File FileName="MenuScene.cs" Line="31" Column="34" />
+      <File FileName="AStarSearch.cs" Line="48" Column="55" />
+      <File FileName="DepthFirstSearch.cs" Line="17" Column="1" />
+      <File FileName="NodeIterator.cs" Line="75" Column="10" />
+      <File FileName="Coordinate.cs" Line="1" Column="1" />
+      <File FileName="DepthFirstIterator.cs" Line="34" Column="10" />
+      <File FileName="BreadthFirstIterator.cs" Line="42" Column="1" />
+      <File FileName="DistanceHeap.cs" Line="5" Column="1" />
+      <File FileName="DistanceElement.cs" Line="11" Column="33" />
+      <File FileName="Grid.cs" Line="31" Column="10" />
+      <File FileName="INodeCollection.cs" Line="12" Column="29" />
+      <File FileName="BreadthFirstSearch.cs" Line="45" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CustomProgram" expanded="True">
+            <Node name="CustomProgram" expanded="True">
+              <Node name="DistanceHeap.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.CustomProgram PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
