@@ -39,7 +39,6 @@ namespace CustomProgram
         }
         public AbstractNode Fetch(Coordinate coordinate)
         {
-            if(coordinate == null) return null;
             if(coordinate.Column < 0 || coordinate.Column >= GetSize() || coordinate.Row >= GetSize() || coordinate.Row < 0)
             {
                 return null;

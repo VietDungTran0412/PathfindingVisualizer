@@ -3,7 +3,7 @@ using SplashKitSDK;
 using System.Collections.Generic;
 namespace CustomProgram
 {
-    public class DepthFirstSearch : IGetPath
+    public class DepthFirstSearch : IGraphTraversal
     {
         private NodeIterator _dfiterator;
         private Queue<AbstractNode> _q;
@@ -19,7 +19,11 @@ namespace CustomProgram
         }
         public void FindPath()
         {
-            if (_q.Count == 2) _dfiterator.AddNode(_q.Dequeue());
+            if (_q.Count == 2)
+            {
+                _dfiterator.AddNode(_q.Peek());
+                _dfiterator.Visited.Add(_q.Dequeue());
+            }
             if (_dfiterator.HasNext())
             {
                 AbstractNode temp = _dfiterator.NextNode();
@@ -39,7 +43,7 @@ namespace CustomProgram
             foreach (AbstractNode node in _dfiterator.GetPath(end))
             {
                 if (node is DestinationNode) continue;
-                node.Shape.Color = Color.DeepPink;
+                node.ToPath();
             }
         }
     }

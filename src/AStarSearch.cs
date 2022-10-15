@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using SplashKitSDK;
 namespace CustomProgram
 {
-    public class AStarSearch:IGetPath
+    public class AStarSearch : IGraphTraversal
     {
         private AStarIterator _astar;
         private Queue<AbstractNode> _q;
@@ -19,9 +19,9 @@ namespace CustomProgram
         }
         public void FindPath()
         {
-            if(_q.Count == 2)
+            if (_q.Count == 2)
             {
-                _astar.Destination = new List<AbstractNode>(_q.ToArray());
+                _astar.SetDestination(_q.ToArray());
                 _astar.AddNode(_q.Peek());
                 _astar.Visited.Add(_q.Dequeue());
                 //return;
@@ -43,10 +43,10 @@ namespace CustomProgram
         }
         public void HighlightPath(AbstractNode end)
         {
-            foreach(AbstractNode node in _astar.GetPath(end))
+            foreach (AbstractNode node in _astar.GetPath(end))
             {
                 if (node is DestinationNode) continue;
-                node.Shape.Color = Color.DeepPink;
+                node.ToPath();
             }
         }
     }

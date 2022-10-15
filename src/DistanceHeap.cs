@@ -6,12 +6,10 @@ namespace CustomProgram
     {
         private List<DistanceElement> _elements;
         private int _size;
-        private int _capacity;
-        public DistanceHeap(int capacity)
+        public DistanceHeap()
         {
             _size = 0;
             _elements = new List<DistanceElement>();
-            _capacity = capacity;
         }
         private int Father(int pos)
         {
@@ -47,7 +45,7 @@ namespace CustomProgram
             int l = LeftChild(pos);
             int r = RightChild(pos);
             int minPos;
-            if(l != -1 && _elements[l].Distance < _elements[pos].Distance)
+            if(l != -1 && _elements[l].FCost < _elements[pos].FCost)
             {
                 minPos = l;
             }
@@ -55,7 +53,7 @@ namespace CustomProgram
             {
                 minPos = pos;
             }
-            if(r!=-1 && _elements[r].Distance < _elements[minPos].Distance)
+            if(r!=-1 && _elements[r].FCost < _elements[minPos].FCost)
             {
                 minPos = r;
             }
@@ -75,33 +73,38 @@ namespace CustomProgram
             HeapifyDown(0);
             return temp;
         }
+        public void HeapifyUp(int pos)
+        {
+            if (pos == 0) return;
+            int father = Father(pos);
+            if (_elements[pos].FCost < _elements[father].FCost)
+            {
+                Swap(pos, father);
+                HeapifyUp(father);
+            }
+        }
         public void Insert(DistanceElement data)
         {
             _elements.Add(data);
             Size += 1;
             int i = Size - 1;
-            while (i != 0)
-            {
-                int father = Father(i);
-                if (_elements[i].Distance < _elements[father].Distance)
-                {
-                    Swap(i, father);
-                    i = father;
-                }
-                else
-                {
-                    break;
-                }
-            }
+            HeapifyUp(i);
         }
         public int Size
         {
             get { return _size; }
             set { _size = value; }
         }
-        public int Capacity
+        public DistanceElement Fetch(AbstractNode node)
         {
-            get { return _capacity; }
+            foreach(DistanceElement item in _elements)
+            {
+                if(item.Node == node)
+                {
+                    return item;
+                }
+            }
+            return null;
         }
     }
 }

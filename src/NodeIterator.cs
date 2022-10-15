@@ -6,11 +6,37 @@ namespace CustomProgram
     public abstract class NodeIterator
     {
         private INodeCollection _grid;
+        private Dictionary<AbstractNode, AbstractNode> _pathTable;
         private HashSet<AbstractNode> _visited;
         public NodeIterator(INodeCollection grid)
         {
             _grid = grid;
             _visited = new HashSet<AbstractNode>();
+            _pathTable = new Dictionary<AbstractNode, AbstractNode>();
+        }
+        public List<AbstractNode> GetPath(AbstractNode end)
+        {
+            List<AbstractNode> _shortestpath = new List<AbstractNode>();
+            _shortestpath.Add(end);
+            AbstractNode temp = end;
+            while (_pathTable.ContainsKey(temp))
+            {
+                _shortestpath.Add(_pathTable[temp]);
+                temp = _pathTable[temp];
+            }
+            return _shortestpath;
+        }
+        public void AddToPathTable(AbstractNode key, AbstractNode val)
+        {
+            if (Visited.Contains(key)) return;
+            if (_pathTable.ContainsKey(key))
+            {
+                _pathTable[key] = val;
+            }
+            else
+            {
+                _pathTable.Add(key, val);
+            }
         }
         public bool CanVisit(AbstractNode node)
         {
@@ -20,69 +46,42 @@ namespace CustomProgram
         public virtual void Reset()
         {
             Visited.Clear();
+            _pathTable.Clear();
         }
-        public abstract List<AbstractNode> GetPath(AbstractNode end);
-        public abstract void AddNode(AbstractNode node);
-        public abstract bool HasNext();
-        public abstract AbstractNode NextNode();
         public HashSet<AbstractNode> Visited
         {
             get { return _visited; }
         }
-        public INodeCollection Grid
-        {
-            get { return _grid; }
-        }
-        private void HighlightNeighbors(AbstractNode node)
-        {
-            if (node is DestinationNode || node is WallNode) return;
-            if (!Visited.Contains(node))
-            {
-                node.Shape.Color = Color.Green;
-            }
-        }
         public void Highlight(AbstractNode node)
         {
-            if (node is DestinationNode) return;
             node.Shape.Color = Color.Blue;
+            if (node is DestinationNode) node.Shape.Color = node.GetColor();
+            foreach (AbstractNode item in GetNeighbors(node))
+            {
+                if(item is DestinationNode || item is WallNode || Visited.Contains(item))
+                {
+                    continue;
+                }
+                item.Shape.Color = Color.Green;
+            }
+        }
+        public List<AbstractNode> GetNeighbors(AbstractNode node)
+        {
             AbstractNode temp;
-            if (Grid.Fetch(GetTop(node)) != null)
-            {
-                temp = Grid.Fetch(GetTop(node));
-                HighlightNeighbors(temp);
-            }
-            if (Grid.Fetch(GetRight(node)) != null)
-            {
-                temp = Grid.Fetch(GetRight(node));
-                HighlightNeighbors(temp);
-            }
-            if (Grid.Fetch(GetBottom(node)) != null)
-            {
-                temp = Grid.Fetch(GetBottom(node));
-                HighlightNeighbors(temp);
-            }
-            if (Grid.Fetch(GetLeft(node)) != null)
-            {
-                temp = Grid.Fetch(GetLeft(node));
-                HighlightNeighbors(temp);
-            }
+            List<AbstractNode> neighbors = new List<AbstractNode>();
+            temp = _grid.Fetch(new Coordinate(node.Position.Row - 1, node.Position.Column));
+            if (temp != null) neighbors.Add(temp);
+            temp = _grid.Fetch(new Coordinate(node.Position.Row + 1, node.Position.Column));
+            if (temp != null) neighbors.Add(temp);
+            temp = _grid.Fetch(new Coordinate(node.Position.Row, node.Position.Column + 1));
+            if (temp != null) neighbors.Add(temp);
+            temp = _grid.Fetch(new Coordinate(node.Position.Row, node.Position.Column - 1));
+            if (temp != null) neighbors.Add(temp);
+            return neighbors;
         }
-        public Coordinate GetTop(AbstractNode node)
-        {
-            return new Coordinate(node.Position.Row - 1, node.Position.Column);
-        }
-        public Coordinate GetBottom(AbstractNode node)
-        {
-            return new Coordinate(node.Position.Row + 1, node.Position.Column);
-        }
-        public Coordinate GetLeft(AbstractNode node)
-        {
-            return new Coordinate(node.Position.Row, node.Position.Column - 1);
-        }
-        public Coordinate GetRight(AbstractNode node)
-        {
-            return new Coordinate(node.Position.Row , node.Position.Column + 1);
-        }
+        public abstract void AddNode(AbstractNode node);
+        public abstract bool HasNext();
+        public abstract AbstractNode NextNode();
     }
 
 }

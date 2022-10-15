@@ -4,20 +4,22 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="DistanceHeap.cs">
     <Files>
-      <File FileName="AStarIterator.cs" Line="66" Column="43" />
-      <File FileName="Program.cs" Line="26" Column="38" />
-      <File FileName="MenuScene.cs" Line="31" Column="34" />
-      <File FileName="AStarSearch.cs" Line="48" Column="55" />
-      <File FileName="DepthFirstSearch.cs" Line="17" Column="1" />
-      <File FileName="NodeIterator.cs" Line="75" Column="10" />
-      <File FileName="Coordinate.cs" Line="1" Column="1" />
-      <File FileName="DepthFirstIterator.cs" Line="34" Column="10" />
+      <File FileName="AStarSearch.cs" Line="49" Column="31" />
+      <File FileName="DistanceElement.cs" Line="31" Column="39" />
+      <File FileName="DistanceHeap.cs" Line="102" Column="38" />
+      <File FileName="Program.cs" Line="15" Column="66" />
+      <File FileName="AStarIterator.cs" Line="91" Column="45" />
       <File FileName="BreadthFirstIterator.cs" Line="42" Column="1" />
-      <File FileName="DistanceHeap.cs" Line="5" Column="1" />
-      <File FileName="DistanceElement.cs" Line="11" Column="33" />
-      <File FileName="Grid.cs" Line="31" Column="10" />
-      <File FileName="INodeCollection.cs" Line="12" Column="29" />
-      <File FileName="BreadthFirstSearch.cs" Line="45" Column="1" />
+      <File FileName="NodeIterator.cs" Line="35" Column="75" />
+      <File FileName="DepthFirstIterator.cs" Line="41" Column="31" />
+      <File FileName="MenuScene.cs" Line="27" Column="38" />
+      <File FileName="DepthFirstSearch.cs" Line="42" Column="31" />
+      <File FileName="Coordinate.cs" Line="1" Column="1" />
+      <File FileName="BreadthFirstSearch.cs" Line="39" Column="32" />
+      <File FileName="NormalNode.cs" Line="1" Column="1" />
+      <File FileName="INodeCollection.cs" Line="12" Column="52" />
+      <File FileName="Constants.cs" Line="1" Column="1" />
+      <File FileName="Grid.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

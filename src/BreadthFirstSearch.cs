@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using SplashKitSDK;
 namespace CustomProgram
 {
-    public class BreadthFirstSearch : IGetPath
+    public class BreadthFirstSearch : IGraphTraversal
     {
         private NodeIterator _bfiterator;
         private Queue<AbstractNode> _q;
@@ -46,7 +46,7 @@ namespace CustomProgram
             foreach(AbstractNode node in path)
             {
                 if (node is DestinationNode) continue;
-                node.Shape.Color = Color.DeepPink;
+                node.ToPath();
             }
         }
     }

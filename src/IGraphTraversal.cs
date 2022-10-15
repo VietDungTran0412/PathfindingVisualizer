@@ -1,7 +1,7 @@
 ﻿using System;
 namespace CustomProgram
 {
-    public interface IGetPath
+    public interface IGraphTraversal
     {
         public void FindPath();
         public void HighlightPath(AbstractNode end);

@@ -12,7 +12,7 @@ namespace CustomProgram
         {
             new Window("Tim Duong Vao Tim Em", 800, 800);
             INodeCollection grid = new Grid(new NodeFactory());
-            MainScene scene = new MainScene(grid, new AStarSearch(grid));
+            MainScene scene = new MainScene(grid, new DepthFirstSearch(grid));
             while (!SplashKit.QuitRequested())
             {
                 // Handle input to adjust player movement
@@ -23,7 +23,7 @@ namespace CustomProgram
                 // Draw to the screen
                 //for (int i = 0; i < 20; i++)
                 //{
-                SplashKit.Delay(150);
+
                 scene.Display();
 
                 //    for (int j = 0; j < 20; j++)

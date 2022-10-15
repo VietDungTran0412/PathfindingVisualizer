@@ -4,20 +4,31 @@ namespace CustomProgram
     public class DistanceElement
     {
         private AbstractNode _node;
-        private double _distance;
-        public DistanceElement(AbstractNode node,double distance)
+        private double _gcost;
+        private double _hcost;
+        public DistanceElement(AbstractNode node, double gcost, double hcost)
         {
             _node = node;
-            _distance = distance;
+            _gcost = gcost;
+            _hcost = hcost;
         }
-        public double Distance
+        public double GCost
         {
-            get { return _distance; }
-            set { _distance = value; }
+            get { return _gcost; }
+            set { _gcost = value; }
+        }
+        public double HCost
+        {
+            get { return _hcost; }
+            set { _hcost = value; }
         }
         public AbstractNode Node
         {
             get { return _node; }
+        }
+        public double FCost
+        {
+            get { return GCost + HCost; }
         }
     }
 }
