@@ -8,11 +8,18 @@ namespace CustomProgram
         private INodeCollection _grid;
         private Dictionary<AbstractNode, AbstractNode> _pathTable;
         private HashSet<AbstractNode> _visited;
+        private List<AbstractNode> _destinations;
         public NodeIterator(INodeCollection grid)
         {
             _grid = grid;
             _visited = new HashSet<AbstractNode>();
             _pathTable = new Dictionary<AbstractNode, AbstractNode>();
+            _destinations = new List<AbstractNode>();
+        }
+        public List<AbstractNode> Destinations
+        {
+            get { return _destinations; }
+            set { _destinations = value; }
         }
         public List<AbstractNode> GetPath(AbstractNode end)
         {
@@ -47,6 +54,7 @@ namespace CustomProgram
         {
             Visited.Clear();
             _pathTable.Clear();
+            Destinations.Clear();
         }
         public HashSet<AbstractNode> Visited
         {

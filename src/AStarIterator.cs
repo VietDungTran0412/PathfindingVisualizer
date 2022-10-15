@@ -5,23 +5,16 @@ namespace CustomProgram
 {
     public class AStarIterator : NodeIterator
     {
-        private List<AbstractNode> _destinations;
         private DistanceHeap _openHeap;
         private Dictionary<AbstractNode, AbstractNode> _pathTable;
         private HashSet<AbstractNode> _closeSet;
         private Dictionary<AbstractNode, double> _costTable;
         public AStarIterator(Grid grid) : base(grid)
         {
-            _destinations = new List<AbstractNode>();
             _openHeap = new DistanceHeap();
             _pathTable = new Dictionary<AbstractNode, AbstractNode>();
             _closeSet = new HashSet<AbstractNode>();
             _costTable = new Dictionary<AbstractNode, double>();
-        }
-        public void SetDestination(AbstractNode[] destinations)
-        {
-            _destinations = new List<AbstractNode>(destinations);
-            _openHeap.Insert(new DistanceElement(_destinations[0], 0, 0));
         }
         public override bool HasNext()
         {
@@ -33,11 +26,10 @@ namespace CustomProgram
             _openHeap.Clear();
             _closeSet.Clear();
             _pathTable.Clear();
-            _destinations.Clear();
         }
         private double HCost(AbstractNode node)
         {
-            return ManhatanDistance(node,_destinations[1]);
+            return ManhatanDistance(node,Destinations[1]);
         }
         private double ManhatanDistance(AbstractNode node1, AbstractNode node2)
         {
@@ -52,6 +44,9 @@ namespace CustomProgram
         {
             if (CanVisit(node))
             {
+                AbstractNode start = Destinations[0];
+                AbstractNode end = Destinations[1];
+                _openHeap.Insert(new DistanceElement(node, ManhatanDistance(start, end), HCost(node)));
             }
         }
         public override AbstractNode NextNode()
@@ -62,16 +57,13 @@ namespace CustomProgram
             _closeSet.Add(cur);
             List<AbstractNode> neighbbors = GetNeighbors(cur);
             foreach(AbstractNode node in neighbbors)
-            {
-                
+            {               
                 if (node is WallNode || _closeSet.Contains(node)) continue;
                 double gcost = ManhatanDistance(node, cur) + popItem.GCost;
-
                 if (Visited.Contains(node))
                 {
                     if (gcost + HCost(node) >= _costTable[node]) continue;
                     _costTable[node] = gcost;
-                    Console.WriteLine(gcost);
                     _openHeap.Insert(new DistanceElement(node, gcost, HCost(node)));
                 }
                 else

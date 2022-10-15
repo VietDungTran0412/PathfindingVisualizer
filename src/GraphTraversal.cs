@@ -3,30 +3,36 @@ using SplashKitSDK;
 using System.Collections.Generic;
 namespace CustomProgram
 {
-    public class DepthFirstSearch : IGraphTraversal
+    public class GraphTraversal
     {
-        private NodeIterator _dfiterator;
+        private NodeIterator _iterator;
         private Queue<AbstractNode> _q;
-        public DepthFirstSearch(INodeCollection collection)
+        public GraphTraversal(INodeCollection collection)
         {
-            _dfiterator = collection.CreateDepthFirstIterator();
+            _iterator = collection.CreateDepthFirstIterator();
             _q = collection.GetDestinationQueue();
+        }
+        public NodeIterator Iterator
+        {
+            get { return _iterator; }
+            set { _iterator = value; }
         }
         public bool IsEnd()
         {
-            if (!_dfiterator.HasNext()) return true;
+            if (!_iterator.HasNext()) return true;
             return false;
         }
         public void FindPath()
         {
             if (_q.Count == 2)
             {
-                _dfiterator.AddNode(_q.Peek());
-                _dfiterator.Visited.Add(_q.Dequeue());
+                _iterator.Destinations = new List<AbstractNode>(_q.ToArray());
+                _iterator.AddNode(_q.Peek());
+                _iterator.Visited.Add(_q.Dequeue());
             }
-            if (_dfiterator.HasNext())
+            if (_iterator.HasNext())
             {
-                AbstractNode temp = _dfiterator.NextNode();
+                AbstractNode temp = _iterator.NextNode();
                 if (temp == _q.Peek())
                 {
                     HighlightPath(temp);
@@ -36,11 +42,11 @@ namespace CustomProgram
         }
         public void RemoveAll()
         {
-            _dfiterator.Reset();
+            _iterator.Reset();
         }
         public void HighlightPath(AbstractNode end)
         {
-            foreach (AbstractNode node in _dfiterator.GetPath(end))
+            foreach (AbstractNode node in _iterator.GetPath(end))
             {
                 if (node is DestinationNode) continue;
                 node.ToPath();
