@@ -10,12 +10,13 @@ namespace CustomProgram
         {
             _factory = factory;
         }
-        public void UpdateScreen()
+        public void UpdateEvent()
         {
             _factory.Draw();
-            if (SplashKit.KeyDown(KeyCode.AKey)) _factory.AddWall();
+            if (SplashKit.KeyDown(KeyCode.WKey)) _factory.AddWall();
             if (SplashKit.KeyDown(KeyCode.DKey)) _factory.AddDestination();
-            if (SplashKit.KeyDown(KeyCode.LKey)) _factory.Clear();
+            if (SplashKit.KeyDown(KeyCode.RKey)) _factory.Clear();
+            if (SplashKit.MouseClicked(MouseButton.LeftButton)) _factory.RemoveAt();
         }
         public void Reset()
         {

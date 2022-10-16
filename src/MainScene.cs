@@ -8,11 +8,13 @@ namespace CustomProgram
         private INodeCollection _collection;
         private GraphTraversal _graphTraversal;
         private bool _running;
-        public MainScene()
+        private Client _client;
+        public MainScene(Client client)
         {
             _collection = new Grid(new NodeFactory());
             _graphTraversal = new GraphTraversal(_collection);
             _running = false;
+            _client = client;
         }
         public INodeCollection NodeCollection
         {
@@ -29,19 +31,26 @@ namespace CustomProgram
         }
         public void Display()
         {
-            _collection.UpdateScreen();
-            if(SplashKit.KeyDown(KeyCode.RKey) && _collection.GetDestinationQueue().Count == 2)
+            _collection.UpdateEvent();
+            if(SplashKit.KeyDown(KeyCode.QKey) && _collection.GetDestinationQueue().Count == 2)
             {
                 _running = true;
             }
-            if (SplashKit.KeyDown(KeyCode.LKey)) _graphTraversal.RemoveAll();
+            if (SplashKit.KeyDown(KeyCode.RKey)) _graphTraversal.RemoveAll();
             if (_running)
             {
+                SplashKit.Delay(75);
                 GraphTraversal.FindPath();
             }
             if(_collection.GetDestinationQueue().Count == 0 || _graphTraversal.IsEnd())
             {
                 _running = false;
+            }
+            if (SplashKit.KeyDown(KeyCode.EscapeKey))
+            {
+                //NodeCollection.Reset();
+                //_animationSpeed = 0;
+                _client.Scene = new MenuScene(_client);
             }
         }
     }

@@ -36231,3 +36231,5 @@
 (02/10/2022) WARNING -> Trying to _get_font for invalid font pointer. [raised in text_driver.cpp:119]
 (02/10/2022) WARNING -> Trying to _get_font for invalid font pointer. [raised in text_driver.cpp:119]
 (02/10/2022) WARNING -> Trying to _get_font for invalid font pointer. [raised in text_driver.cpp:119]
+(16/10/2022) WARNING -> Attempting to draw to a surface that does not exist. [raised in utility_functions.cpp:231]
+(16/10/2022) WARNING -> Attempting to draw to a surface that does not exist. [raised in utility_functions.cpp:231]

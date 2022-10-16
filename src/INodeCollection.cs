@@ -11,7 +11,7 @@ namespace CustomProgram
         public NodeIterator CreateBreadthFirstIterator();
         public AStarIterator CreateAStarIterator();
         public AbstractNode Fetch(Coordinate coordinate);
-        public void UpdateScreen();
+        public void UpdateEvent();
     }
 
 }

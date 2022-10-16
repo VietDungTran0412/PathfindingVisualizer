@@ -26,6 +26,7 @@ namespace CustomProgram
             _openHeap.Clear();
             _closeSet.Clear();
             _pathTable.Clear();
+            _costTable.Clear();
         }
         private double HCost(AbstractNode node)
         {

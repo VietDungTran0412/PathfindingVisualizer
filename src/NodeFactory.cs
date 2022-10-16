@@ -37,6 +37,20 @@ namespace CustomProgram
             }
             _destinationQ.Clear();
         }
+        public void RemoveAt()
+        {
+            for (int i = 0; i < _size; i++)
+            {
+                for (int j = 0; j < _size; j++)
+                {
+                    if (_graph[i, j] is DestinationNode) continue;
+                    if (_graph[i, j].Shape.IsAt())
+                    {
+                        _graph[i, j] = new NormalNode(_size * 2, new Coordinate(i, j));
+                    }                    
+                }
+            }
+        }
         public void AddWall()
         {
             for (int i = 0; i < _size; i++)

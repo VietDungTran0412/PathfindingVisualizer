@@ -28,7 +28,7 @@ namespace CustomProgram
         }
         public void Click()
         {
-            if(_rect.IsAt() && SplashKit.MouseClicked(MouseButton.LeftButton))
+            if(_rect.IsAt() && SplashKit.MouseDown(MouseButton.LeftButton))
             {
                 _onClick.Notify();
             }
@@ -36,8 +36,10 @@ namespace CustomProgram
         public void Draw()
         {
             _rect.Draw();
-            int padding = 25;
-            SplashKit.DrawText(_content, Color.Black, padding + _rect.X, padding + _rect.Y);
+            int paddingTop = 22;
+            int paddingLeft = 15;
+            Font font = Constants.Font;
+            SplashKit.DrawText(_content, Color.White, font, 20, paddingLeft + _rect.X, paddingTop + _rect.Y);
         }
     }
 }

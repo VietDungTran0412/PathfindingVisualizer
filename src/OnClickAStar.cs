@@ -10,7 +10,7 @@ namespace CustomProgram
         }
         public void Notify()
         {
-            MainScene scene = new MainScene();
+            MainScene scene = new MainScene(_client);
             scene.GraphTraversal.Iterator = scene.NodeCollection.CreateAStarIterator();
             _client.Scene = scene;
         }

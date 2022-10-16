@@ -1,4 +1,5 @@
 ﻿using System;
+using SplashKitSDK;
 namespace CustomProgram
 {
     public class OnClickDFS : IOnClick
@@ -10,7 +11,7 @@ namespace CustomProgram
         }
         public void Notify()
         {
-            MainScene scene = new MainScene();
+            MainScene scene = new MainScene(_client);
             scene.GraphTraversal.Iterator = scene.NodeCollection.CreateDepthFirstIterator();
             _client.Scene = scene;
         }
