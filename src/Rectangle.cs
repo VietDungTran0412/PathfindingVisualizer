@@ -6,6 +6,7 @@ namespace CustomProgram
     {
         private int _width;
         private int _height;
+        public Rectangle() : this(0, 0, 0, 0) { }
         public Rectangle(double x, double y, int width, int height)
         {
             X = x;
@@ -23,10 +24,12 @@ namespace CustomProgram
         public int Width
         {
             get { return _width; }
+            set { _width = value; }
         }
         public int Height
         {
             get { return _height; }
+            set { _height = value; }
         }
         public override void Draw()
         {

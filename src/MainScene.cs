@@ -3,19 +3,29 @@ using SplashKitSDK;
 using System.Collections.Generic;
 namespace CustomProgram
 {
-    public class MainScene
+    public class MainScene:IScene
     {
         private INodeCollection _collection;
         private GraphTraversal _graphTraversal;
         private bool _running;
-        public MainScene(INodeCollection collection)
+        public MainScene()
         {
-            _collection = collection;
+            _collection = new Grid(new NodeFactory());
             _graphTraversal = new GraphTraversal(_collection);
+            _running = false;
+        }
+        public INodeCollection NodeCollection
+        {
+            get { return _collection; }
+        }
+        public Color GetBackgroundColor()
+        {
+            return Color.Black;
         }
         public GraphTraversal GraphTraversal
         {
             get { return _graphTraversal; }
+            set { _graphTraversal = value; }
         }
         public void Display()
         {
@@ -27,15 +37,11 @@ namespace CustomProgram
             if (SplashKit.KeyDown(KeyCode.LKey)) _graphTraversal.RemoveAll();
             if (_running)
             {
-                _graphTraversal.FindPath();
+                GraphTraversal.FindPath();
             }
             if(_collection.GetDestinationQueue().Count == 0 || _graphTraversal.IsEnd())
             {
                 _running = false;
-            }
-            if (SplashKit.KeyDown(KeyCode.TKey))
-            {
-                GraphTraversal.Iterator = _collection.CreateAStarIterator();
             }
         }
     }

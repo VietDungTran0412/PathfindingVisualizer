@@ -11,8 +11,7 @@ namespace CustomProgram
         public static void Main()
         {
             new Window("Tim Duong Vao Tim Em", 800, 800);
-            INodeCollection grid = new Grid(new NodeFactory());
-            MainScene scene = new MainScene(grid);
+            Client client = new Client();
             while (!SplashKit.QuitRequested())
             {
                 // Handle input to adjust player movement
@@ -24,7 +23,7 @@ namespace CustomProgram
                 //for (int i = 0; i < 20; i++)
                 //{
 
-                scene.Display();
+                client.DisplayScene();
 
                 //    for (int j = 0; j < 20; j++)
                 //    {

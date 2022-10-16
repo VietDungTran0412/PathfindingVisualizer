@@ -29,9 +29,9 @@ namespace CustomProgram
         }
         private double HCost(AbstractNode node)
         {
-            return ManhatanDistance(node,Destinations[1]);
+            return EuclideanDistance(node,Destinations[1]);
         }
-        private double ManhatanDistance(AbstractNode node1, AbstractNode node2)
+        private double EuclideanDistance(AbstractNode node1, AbstractNode node2)
         {
             double x1 = node1.Position.Row;
             double y1 = node1.Position.Column;
@@ -46,7 +46,7 @@ namespace CustomProgram
             {
                 AbstractNode start = Destinations[0];
                 AbstractNode end = Destinations[1];
-                _openHeap.Insert(new DistanceElement(node, ManhatanDistance(start, end), HCost(node)));
+                _openHeap.Insert(new DistanceElement(node, EuclideanDistance(start, end), HCost(node)));
             }
         }
         public override AbstractNode NextNode()
@@ -59,11 +59,11 @@ namespace CustomProgram
             foreach(AbstractNode node in neighbbors)
             {               
                 if (node is WallNode || _closeSet.Contains(node)) continue;
-                double gcost = ManhatanDistance(node, cur) + popItem.GCost;
+                double gcost = EuclideanDistance(node, cur) + popItem.GCost;
                 if (Visited.Contains(node))
                 {
                     if (gcost + HCost(node) >= _costTable[node]) continue;
-                    _costTable[node] = gcost;
+                    _costTable[node] = gcost + HCost(node);
                     _openHeap.Insert(new DistanceElement(node, gcost, HCost(node)));
                 }
                 else
