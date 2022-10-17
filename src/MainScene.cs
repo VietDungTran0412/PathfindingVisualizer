@@ -11,7 +11,7 @@ namespace CustomProgram
         private Client _client;
         public MainScene(Client client)
         {
-            _collection = new Grid(new NodeFactory());
+            _collection = new Grid(new GraphBuilder());
             _graphTraversal = new GraphTraversal(_collection);
             _running = false;
             _client = client;

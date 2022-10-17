@@ -6,13 +6,11 @@ namespace CustomProgram
     public class AStarIterator : NodeIterator
     {
         private DistanceHeap _openHeap;
-        private Dictionary<AbstractNode, AbstractNode> _pathTable;
         private HashSet<AbstractNode> _closeSet;
         private Dictionary<AbstractNode, double> _costTable;
         public AStarIterator(Grid grid) : base(grid)
         {
             _openHeap = new DistanceHeap();
-            _pathTable = new Dictionary<AbstractNode, AbstractNode>();
             _closeSet = new HashSet<AbstractNode>();
             _costTable = new Dictionary<AbstractNode, double>();
         }
@@ -25,7 +23,6 @@ namespace CustomProgram
             base.Reset();
             _openHeap.Clear();
             _closeSet.Clear();
-            _pathTable.Clear();
             _costTable.Clear();
         }
         private double HCost(AbstractNode node)

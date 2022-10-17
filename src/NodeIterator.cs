@@ -62,7 +62,7 @@ namespace CustomProgram
         }
         public void Highlight(AbstractNode node)
         {
-            node.Shape.Color = Color.Blue;
+            node.Shape.Color = Color.RGBColor(34,211,242);
             if (node is DestinationNode) node.Shape.Color = node.GetColor();
             foreach (AbstractNode item in GetNeighbors(node))
             {
@@ -70,7 +70,7 @@ namespace CustomProgram
                 {
                     continue;
                 }
-                item.Shape.Color = Color.Green;
+                item.Shape.Color = Color.RGBColor(90,149,237);
             }
         }
         public List<AbstractNode> GetNeighbors(AbstractNode node)

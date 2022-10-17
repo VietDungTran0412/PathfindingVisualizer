@@ -13,7 +13,7 @@ namespace CustomProgram
         }
         public override Color GetColor()
         {
-            return Color.RGBColor(250, 136, 105);
+            return Color.RGBColor(237,156,90);
         }
         public override void ToPath()
         {

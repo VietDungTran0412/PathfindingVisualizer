@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 namespace CustomProgram
 {
-    public class NodeFactory
+    public class GraphBuilder
     {
         private int _size;
         private AbstractNode[,] _graph;
         private Queue<AbstractNode> _destinationQ;
-        public NodeFactory()
+        public GraphBuilder()
         {
             _size = 20;
             _graph = new AbstractNode[_size, _size];

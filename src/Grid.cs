@@ -5,22 +5,22 @@ namespace CustomProgram
 {
     public class Grid : INodeCollection
     {
-        private NodeFactory _factory;
-        public Grid(NodeFactory factory)
+        private GraphBuilder _builder;
+        public Grid(GraphBuilder builder)
         {
-            _factory = factory;
+            _builder = builder;
         }
         public void UpdateEvent()
         {
-            _factory.Draw();
-            if (SplashKit.KeyDown(KeyCode.WKey)) _factory.AddWall();
-            if (SplashKit.KeyDown(KeyCode.DKey)) _factory.AddDestination();
-            if (SplashKit.KeyDown(KeyCode.RKey)) _factory.Clear();
-            if (SplashKit.MouseClicked(MouseButton.LeftButton)) _factory.RemoveAt();
+            _builder.Draw();
+            if (SplashKit.KeyDown(KeyCode.WKey)) _builder.AddWall();
+            if (SplashKit.KeyDown(KeyCode.DKey)) _builder.AddDestination();
+            if (SplashKit.KeyDown(KeyCode.RKey)) _builder.Clear();
+            if (SplashKit.MouseClicked(MouseButton.LeftButton)) _builder.RemoveAt();
         }
         public void Reset()
         {
-            _factory.Clear();
+            _builder.Clear();
         }
         public NodeIterator CreateDepthFirstIterator()
         {
@@ -36,7 +36,7 @@ namespace CustomProgram
         }
         public int GetSize()
         {
-            return _factory.Size;
+            return _builder.Size;
         }
         public AbstractNode Fetch(Coordinate coordinate)
         {
@@ -44,11 +44,11 @@ namespace CustomProgram
             {
                 return null;
             }
-            return _factory.Graph[coordinate.Row, coordinate.Column];
+            return _builder.Graph[coordinate.Row, coordinate.Column];
         }
         public Queue<AbstractNode> GetDestinationQueue()
         {
-            return _factory.DestinationQ;
+            return _builder.DestinationQ;
         }
     }
 }
