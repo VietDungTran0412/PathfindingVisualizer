@@ -19,6 +19,10 @@ namespace CustomProgram
         {
             _shape.Draw();
         }
+        public int Size
+        {
+            get => _size;
+        }
         public abstract void ToPath();
         public abstract Color GetColor();
         public Coordinate Position

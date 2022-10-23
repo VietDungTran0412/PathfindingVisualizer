@@ -1,32 +1,48 @@
 ﻿<Properties StartupConfiguration="{469165E8-8226-4E5D-BF2C-CF30F950FBA7}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="DistanceHeap.cs">
+  <MonoDevelop.Ide.ItemProperties.CustomProgram PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MainScene.cs">
     <Files>
-      <File FileName="AStarSearch.cs" Line="49" Column="31" />
       <File FileName="DistanceElement.cs" Line="31" Column="39" />
       <File FileName="DistanceHeap.cs" Line="102" Column="38" />
-      <File FileName="Program.cs" Line="15" Column="66" />
-      <File FileName="AStarIterator.cs" Line="91" Column="45" />
-      <File FileName="BreadthFirstIterator.cs" Line="42" Column="1" />
-      <File FileName="NodeIterator.cs" Line="35" Column="75" />
-      <File FileName="DepthFirstIterator.cs" Line="41" Column="31" />
-      <File FileName="MenuScene.cs" Line="27" Column="38" />
-      <File FileName="DepthFirstSearch.cs" Line="42" Column="31" />
+      <File FileName="Program.cs" Line="19" Column="39" />
+      <File FileName="AStarIterator.cs" Line="13" Column="44" />
+      <File FileName="NodeIterator.cs" Line="83" Column="51" />
+      <File FileName="DepthFirstIterator.cs" Line="8" Column="1" />
+      <File FileName="BreadthFirstIterator.cs" Line="2" Column="34" />
       <File FileName="Coordinate.cs" Line="1" Column="1" />
-      <File FileName="BreadthFirstSearch.cs" Line="39" Column="32" />
-      <File FileName="NormalNode.cs" Line="1" Column="1" />
-      <File FileName="INodeCollection.cs" Line="12" Column="52" />
+      <File FileName="NormalNode.cs" Line="17" Column="41" />
+      <File FileName="INodeCollection.cs" Line="14" Column="45" />
       <File FileName="Constants.cs" Line="1" Column="1" />
-      <File FileName="Grid.cs" Line="1" Column="1" />
+      <File FileName="Grid.cs" Line="22" Column="10" />
+      <File FileName="MenuScene.cs" Line="19" Column="1" />
+      <File FileName="Button.cs" Line="31" Column="51" />
+      <File FileName="AbstractNode.cs" Line="24" Column="26" />
+      <File FileName="Rectangle.cs" Line="32" Column="35" />
+      <File FileName="Client.cs" Line="21" Column="44" />
+      <File FileName="IOnClick.cs" Line="6" Column="30" />
+      <File FileName="OnClickDFS.cs" Line="14" Column="52" />
+      <File FileName="OnClickBFS.cs" Line="13" Column="52" />
+      <File FileName="OnClickAStar.cs" Line="13" Column="52" />
+      <File FileName="IScene.cs" Line="8" Column="21" />
+      <File FileName="OnClickExit.cs" Line="13" Column="29" />
+      <File FileName="DestinationNode.cs" Line="31" Column="50" />
+      <File FileName="WallNode.cs" Line="1" Column="1" />
+      <File FileName="GraphBuilder.cs" Line="8" Column="17" />
+      <File FileName="GraphTraversal.cs" Line="27" Column="1" />
+      <File FileName="MainScene.cs" Line="47" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CustomProgram" expanded="True">
             <Node name="CustomProgram" expanded="True">
-              <Node name="DistanceHeap.cs" selected="True" />
+              <Node name="MainScene.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -36,8 +52,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.CustomProgram PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
 </Properties>

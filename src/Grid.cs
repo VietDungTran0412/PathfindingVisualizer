@@ -10,13 +10,13 @@ namespace CustomProgram
         {
             _builder = builder;
         }
-        public void UpdateEvent()
+        public void UpdateEvent(bool running)
         {
             _builder.Draw();
-            if (SplashKit.KeyDown(KeyCode.WKey)) _builder.AddWall();
-            if (SplashKit.KeyDown(KeyCode.DKey)) _builder.AddDestination();
-            if (SplashKit.KeyDown(KeyCode.RKey)) _builder.Clear();
-            if (SplashKit.MouseClicked(MouseButton.LeftButton)) _builder.RemoveAt();
+            if (SplashKit.KeyDown(KeyCode.WKey) && !running) _builder.AddWall();
+            if (SplashKit.KeyDown(KeyCode.DKey) && !running) _builder.AddDestination();
+            if (SplashKit.KeyDown(KeyCode.RKey) && !running) _builder.Clear();
+            if (SplashKit.MouseClicked(MouseButton.LeftButton) && !running) _builder.RemoveAt();
         }
         public void Reset()
         {

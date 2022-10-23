@@ -28,9 +28,9 @@ namespace CustomProgram
         {
             base.Draw();
             Font font = Constants.Font;
-            double fontMarginLeft = SplashKit.TextWidth(_num.ToString(),font,25)/1.5;
-            double fontMarginTop = SplashKit.TextHeight(_num.ToString(), font, 25)/4;
-            SplashKit.DrawText(_num.ToString(), Color.Black, font, 25, Shape.X + fontMarginLeft, Shape.Y + fontMarginTop);
+            double fontMarginLeft = Size / 2 - 10;
+            double fontMarginTop = Size / 2 -  SplashKit.TextHeight(_num.ToString(), font, 30)/2;
+            SplashKit.DrawText(_num.ToString(), Color.Black, font, 30, Shape.X + fontMarginLeft, Shape.Y + fontMarginTop);
         }
     }
 }

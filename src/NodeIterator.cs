@@ -79,9 +79,9 @@ namespace CustomProgram
             List<AbstractNode> neighbors = new List<AbstractNode>();
             temp = _grid.Fetch(new Coordinate(node.Position.Row - 1, node.Position.Column));
             if (temp != null) neighbors.Add(temp);
-            temp = _grid.Fetch(new Coordinate(node.Position.Row + 1, node.Position.Column));
-            if (temp != null) neighbors.Add(temp);
             temp = _grid.Fetch(new Coordinate(node.Position.Row, node.Position.Column + 1));
+            if (temp != null) neighbors.Add(temp);
+            temp = _grid.Fetch(new Coordinate(node.Position.Row + 1, node.Position.Column));
             if (temp != null) neighbors.Add(temp);
             temp = _grid.Fetch(new Coordinate(node.Position.Row, node.Position.Column - 1));
             if (temp != null) neighbors.Add(temp);

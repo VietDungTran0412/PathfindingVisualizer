@@ -31,7 +31,7 @@ namespace CustomProgram
         }
         public void Display()
         {
-            _collection.UpdateEvent();
+            _collection.UpdateEvent(_running);
             if(SplashKit.KeyDown(KeyCode.QKey) && _collection.GetDestinationQueue().Count == 2)
             {
                 _running = true;
