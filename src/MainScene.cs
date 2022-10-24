@@ -9,12 +9,14 @@ namespace CustomProgram
         private GraphTraversal _graphTraversal;
         private bool _running;
         private Client _client;
+        private Counter _count;
         public MainScene(Client client)
         {
             _collection = new Grid(new GraphBuilder());
             _graphTraversal = new GraphTraversal(_collection);
             _running = false;
             _client = client;
+            _count = new Counter(5,5);
         }
         public INodeCollection NodeCollection
         {
@@ -32,24 +34,28 @@ namespace CustomProgram
         public void Display()
         {
             _collection.UpdateEvent(_running);
-            if(SplashKit.KeyDown(KeyCode.QKey) && _collection.GetDestinationQueue().Count == 2)
+            if(SplashKit.KeyDown(KeyCode.QKey) && _collection.DestinationQueue.Count == 2)
             {
                 _running = true;
             }
             if (SplashKit.KeyDown(KeyCode.RKey)) _graphTraversal.RemoveAll();
+            if (SplashKit.KeyTyped(KeyCode.EqualsKey)) _count.DecreaseLimit();
+            if (SplashKit.KeyTyped(KeyCode.MinusKey)) _count.IncreaseLimit();
             if (_running)
             {
-                SplashKit.Delay(75);
-                GraphTraversal.FindPath();
+                if (_count.Tick == 0)
+                {
+                    GraphTraversal.FindPath();
+                    _count.Reset();
+                }
+                _count.Decrease();
             }
-            if(_collection.GetDestinationQueue().Count == 0 || _graphTraversal.IsEnd())
+            if(_collection.DestinationQueue.Count == 0 || _graphTraversal.IsEnd())
             {
                 _running = false;
             }
-            if (SplashKit.KeyDown(KeyCode.EscapeKey))
+            if (SplashKit.KeyDown(KeyCode.BKey))
             {
-                //NodeCollection.Reset();
-                //_animationSpeed = 0;
                 _client.Scene = new MenuScene(_client);
             }
         }

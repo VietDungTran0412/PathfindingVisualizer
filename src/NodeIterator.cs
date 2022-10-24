@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using SplashKitSDK;
 namespace CustomProgram
 {
+    // Iterator pattern used to traverse through the node collection using specific algorithm like DFS,BFS and AStar
     public abstract class NodeIterator
     {
         private INodeCollection _grid;
-        private Dictionary<AbstractNode, AbstractNode> _pathTable;
-        private HashSet<AbstractNode> _visited;
-        private List<AbstractNode> _destinations;
+        private Dictionary<AbstractNode, AbstractNode> _pathTable; // Path table to check which node is came from --> to find shortest path
+        private HashSet<AbstractNode> _visited; // Store visited node
+        private List<AbstractNode> _destinations; // Store destination
         public NodeIterator(INodeCollection grid)
         {
             _grid = grid;
@@ -16,11 +17,12 @@ namespace CustomProgram
             _pathTable = new Dictionary<AbstractNode, AbstractNode>();
             _destinations = new List<AbstractNode>();
         }
-        public List<AbstractNode> Destinations
+        public List<AbstractNode> Destinations // List of Destination or checkpoint, last index will be the last checkpoint
         {
             get { return _destinations; }
             set { _destinations = value; }
         }
+        // Get the path from path table which store the previos traversal node
         public List<AbstractNode> GetPath(AbstractNode end)
         {
             List<AbstractNode> _shortestpath = new List<AbstractNode>();
@@ -33,16 +35,17 @@ namespace CustomProgram
             }
             return _shortestpath;
         }
-        public void AddToPathTable(AbstractNode key, AbstractNode val)
+        // Add to the path table to store the node where it comes from
+        public void AddToPathTable(AbstractNode key, AbstractNode from)
         {
             if (Visited.Contains(key)) return;
             if (_pathTable.ContainsKey(key))
             {
-                _pathTable[key] = val;
+                _pathTable[key] = from;
             }
             else
             {
-                _pathTable.Add(key, val);
+                _pathTable.Add(key, from);
             }
         }
         public bool CanVisit(AbstractNode node)
@@ -60,7 +63,7 @@ namespace CustomProgram
         {
             get { return _visited; }
         }
-        public void Highlight(AbstractNode node)
+        public void Highlight(AbstractNode node) // Highlight the current node and its neighbor
         {
             node.Shape.Color = Color.RGBColor(34,211,242);
             if (node is DestinationNode) node.Shape.Color = node.GetColor();
@@ -73,7 +76,7 @@ namespace CustomProgram
                 item.Shape.Color = Color.RGBColor(90,149,237);
             }
         }
-        public List<AbstractNode> GetNeighbors(AbstractNode node)
+        public List<AbstractNode> GetNeighbors(AbstractNode node) // Get List of Neighbor during traversal
         {
             AbstractNode temp;
             List<AbstractNode> neighbors = new List<AbstractNode>();
@@ -87,9 +90,9 @@ namespace CustomProgram
             if (temp != null) neighbors.Add(temp);
             return neighbors;
         }
-        public abstract void AddNode(AbstractNode node);
-        public abstract bool HasNext();
-        public abstract AbstractNode NextNode();
+        public abstract void AddNode(AbstractNode node); // Add node the specific data structure of iterator
+        public abstract bool HasNext(); // Check if is there any node left
+        public abstract AbstractNode NextNode(); // Return the next node from traverse process
     }
 
 }

@@ -19,11 +19,6 @@ namespace CustomProgram
         {
             return;
         }
-        public int Val
-        {
-            get { return _num; }
-            set { _num = value; }
-        }
         public override void Draw()
         {
             base.Draw();

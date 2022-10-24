@@ -1,6 +1,7 @@
 ﻿using System;
 namespace CustomProgram
 {
+    // If user click on AStar button --> Click behavior is execute to notify client to change to AStar
     public class OnClickAStar : IOnClick
     {
         private Client _client;

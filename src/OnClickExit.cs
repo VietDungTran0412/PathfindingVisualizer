@@ -1,6 +1,7 @@
 ﻿using System;
 namespace CustomProgram
 {
+    // Exit the program if click
     public class OnClickExit:IOnClick
     {
         private Client _client;

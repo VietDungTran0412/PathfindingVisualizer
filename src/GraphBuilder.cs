@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 namespace CustomProgram
 {
+    // Builder pattern to build the grid or graph by itself
+    // Different method will be used for users to customize the grid or graph
     public class GraphBuilder
     {
         private int _size;

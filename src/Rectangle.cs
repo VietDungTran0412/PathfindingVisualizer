@@ -2,6 +2,7 @@
 using SplashKitSDK;
 namespace CustomProgram
 {
+    // Rectangle shape used to draw different artwork
     public class Rectangle : Shape
     {
         private int _width;

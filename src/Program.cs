@@ -5,6 +5,7 @@ using System.Linq;
 using SplashKitSDK;
 namespace CustomProgram
 {
+    // Main program
     public class Program
     {
         public static void Main()

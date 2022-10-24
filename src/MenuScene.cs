@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using SplashKitSDK;
 namespace CustomProgram
 {
+    // Menu Scene of the program
     public class MenuScene : IScene
     {
         private List<Button> _buttonList;
@@ -31,6 +32,7 @@ namespace CustomProgram
         {
             return Color.White;
         }
+        // Lazy Set up the size and position of button
         private void Setup()
         {
             int width = 220;

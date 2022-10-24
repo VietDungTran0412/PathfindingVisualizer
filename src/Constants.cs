@@ -2,6 +2,7 @@
 using SplashKitSDK;
 namespace CustomProgram
 {
+    // Every essential constants
     public class Constants
     {
         private static Font _font = new Font("mainfont", "font/main.otf");

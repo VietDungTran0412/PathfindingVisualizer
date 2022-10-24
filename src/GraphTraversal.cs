@@ -10,7 +10,7 @@ namespace CustomProgram
         public GraphTraversal(INodeCollection collection)
         {
             _iterator = collection.CreateDepthFirstIterator();
-            _q = collection.GetDestinationQueue();
+            _q = collection.DestinationQueue;
         }
         public NodeIterator Iterator
         {

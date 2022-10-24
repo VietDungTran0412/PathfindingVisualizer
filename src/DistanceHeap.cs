@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 namespace CustomProgram
 {
+    // Building Heap data structure to increase the performance of the traversal
+    // Could be considered as Priority Queue which stores node and the distance
     public class DistanceHeap
     {
         private List<DistanceElement> _elements;

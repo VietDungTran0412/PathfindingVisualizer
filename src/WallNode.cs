@@ -3,6 +3,7 @@ using SplashKitSDK;
 
 namespace CustomProgram
 {
+    // Wall node is not allowed iterator to visit
     public class WallNode : AbstractNode
     {
         public WallNode() : this(-1, new Coordinate(-1, -1)) { }
@@ -15,10 +16,7 @@ namespace CustomProgram
             return Color.Black;
         }
         // Wall node so can not be highlighted as path
-        public override void ToPath()
-        {
-            return;
-        }
+        public override void ToPath() { }
     }
 }
 

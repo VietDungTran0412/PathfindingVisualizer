@@ -34,21 +34,21 @@ namespace CustomProgram
         {
             return new AStarIterator(this);
         }
-        public int GetSize()
+        public int Size
         {
-            return _builder.Size;
+            get => _builder.Size;
         }
         public AbstractNode Fetch(Coordinate coordinate)
         {
-            if(coordinate.Column < 0 || coordinate.Column >= GetSize() || coordinate.Row >= GetSize() || coordinate.Row < 0)
+            if(coordinate.Column < 0 || coordinate.Column >= Size || coordinate.Row >= Size || coordinate.Row < 0)
             {
                 return null;
             }
             return _builder.Graph[coordinate.Row, coordinate.Column];
         }
-        public Queue<AbstractNode> GetDestinationQueue()
+        public Queue<AbstractNode> DestinationQueue
         {
-            return _builder.DestinationQ;
+            get => _builder.DestinationQ;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 namespace CustomProgram
 {
+    // Coordinate of object in the grid or node collection
     public class Coordinate
     {
         private int _row;

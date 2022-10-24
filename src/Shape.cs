@@ -2,6 +2,7 @@
 using SplashKitSDK;
 namespace CustomProgram
 {
+    // Abstract Shape
     public abstract class Shape
     {
         private Color _color;

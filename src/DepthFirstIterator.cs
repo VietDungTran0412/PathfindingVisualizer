@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using SplashKitSDK;
 namespace CustomProgram
 {
+    // Depth First Iterator to traverse through node collection using Depth First Search Algorithm
     public class DepthFirstIterator : NodeIterator
     {
-        private Stack<AbstractNode> _st;
+        private Stack<AbstractNode> _st; // Stack data structure to store node
         public DepthFirstIterator(Grid grid):base(grid)
         {
             _st = new Stack<AbstractNode>();

@@ -1,6 +1,8 @@
 ﻿using System;
 namespace CustomProgram
 {
+    // Distance element to store node and its distance like gcost, hcost and fcost.
+    // Only use to stored data
     public class DistanceElement
     {
         private AbstractNode _node;

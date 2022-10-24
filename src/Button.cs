@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using SplashKitSDK;
 namespace CustomProgram
 {
+    // Button if it is needed
     public class Button
     {
         private Rectangle _rect;
         private string _content;
-        private IOnClick _onClick;
+        private IOnClick _onClick; // Different Behaviour of OnClick action -- Using Strategy Pattern
         public Button(Rectangle rect,IOnClick onClick ,string content)
         {
             _rect = rect;
@@ -18,6 +19,7 @@ namespace CustomProgram
         {
             get { return _rect; }
         }
+        // Hover effect
         public void Hover()
         {
             int margin = 3;
@@ -26,6 +28,7 @@ namespace CustomProgram
                 SplashKit.DrawRectangle(Color.Black, _rect.X - margin, _rect.Y - margin, _rect.Width + margin * 2, _rect.Height + margin * 2);
             }
         }
+        // Click Action
         public void Click()
         {
             if(_rect.IsAt() && SplashKit.MouseDown(MouseButton.LeftButton))
@@ -33,7 +36,7 @@ namespace CustomProgram
                 _onClick.Notify();
             }
         }
-        public void Draw()
+        public void Draw() // Draw the button
         {
             _rect.Draw();
             int paddingTop = 22;

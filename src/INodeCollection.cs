@@ -4,9 +4,9 @@ namespace CustomProgram
 {
     public interface INodeCollection
     {
-        public int GetSize();
+        public int Size { get; }
         public void Reset();
-        public Queue<AbstractNode> GetDestinationQueue();
+        public Queue<AbstractNode> DestinationQueue { get; }
         public NodeIterator CreateDepthFirstIterator();
         public NodeIterator CreateBreadthFirstIterator();
         public AStarIterator CreateAStarIterator();
