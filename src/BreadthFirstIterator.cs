@@ -27,7 +27,7 @@ namespace CustomProgram
         { 
             AbstractNode cur = _q.Dequeue();
             Highlight(cur);
-            List<AbstractNode> neighbors = GetNeighbors(cur);
+            List<AbstractNode> neighbors = _neighbors.Get(cur);
             foreach(AbstractNode node in neighbors)
             {
                 AddNode(node);

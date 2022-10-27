@@ -15,6 +15,7 @@ namespace CustomProgram
             _buttonList.Add(new Button(new Rectangle(), new OnClickDFS(client), "Depth First Search"));
             _buttonList.Add(new Button(new Rectangle(), new OnClickBFS(client), "Breadth First Search"));
             _buttonList.Add(new Button(new Rectangle(), new OnClickAStar(client), "A Star Search"));
+            _buttonList.Add(new Button(new Rectangle(), new OnClickGuidline(client), "Guidline"));
             _buttonList.Add(new Button(new Rectangle(), new OnClickExit(client), "Exit"));
             Setup();
         }
@@ -37,7 +38,7 @@ namespace CustomProgram
         {
             int width = 220;
             int height = 70;
-            double startY = 350;
+            double startY = 275;
             for (int i = 0; i < _buttonList.Count; i++)
             {
                 _buttonList[i].Rectangle.Width = width;

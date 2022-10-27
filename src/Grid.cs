@@ -16,7 +16,12 @@ namespace CustomProgram
             if (SplashKit.KeyDown(KeyCode.WKey) && !running) _builder.AddWall();
             if (SplashKit.KeyDown(KeyCode.DKey) && !running) _builder.AddDestination();
             if (SplashKit.KeyDown(KeyCode.RKey) && !running) _builder.Clear();
+            if (SplashKit.KeyDown(KeyCode.TKey) && !running) _builder.SetRandomMaze();
             if (SplashKit.MouseClicked(MouseButton.LeftButton) && !running) _builder.RemoveAt();
+        }
+        public GraphBuilder Builder
+        {
+            get => _builder;
         }
         public void Reset()
         {
@@ -33,22 +38,6 @@ namespace CustomProgram
         public AStarIterator CreateAStarIterator()
         {
             return new AStarIterator(this);
-        }
-        public int Size
-        {
-            get => _builder.Size;
-        }
-        public AbstractNode Fetch(Coordinate coordinate)
-        {
-            if(coordinate.Column < 0 || coordinate.Column >= Size || coordinate.Row >= Size || coordinate.Row < 0)
-            {
-                return null;
-            }
-            return _builder.Graph[coordinate.Row, coordinate.Column];
-        }
-        public Queue<AbstractNode> DestinationQueue
-        {
-            get => _builder.DestinationQ;
         }
     }
 }

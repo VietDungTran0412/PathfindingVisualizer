@@ -6,18 +6,18 @@ namespace CustomProgram
     // Button if it is needed
     public class Button
     {
-        private Rectangle _rect;
+        private Shape _rect;
         private string _content;
         private IOnClick _onClick; // Different Behaviour of OnClick action -- Using Strategy Pattern
-        public Button(Rectangle rect,IOnClick onClick ,string content)
+        public Button(Shape rect,IOnClick onClick ,string content)
         {
             _rect = rect;
             _onClick = onClick;
             _content = content;
         }
-        public Rectangle Rectangle
+        public Shape Rectangle
         {
-            get { return _rect; }
+            get => _rect;
         }
         // Hover effect
         public void Hover()
@@ -31,7 +31,7 @@ namespace CustomProgram
         // Click Action
         public void Click()
         {
-            if(_rect.IsAt() && SplashKit.MouseDown(MouseButton.LeftButton))
+            if(_rect.IsAt() && SplashKit.MouseClicked(MouseButton.LeftButton))
             {
                 _onClick.Notify();
             }

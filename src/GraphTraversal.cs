@@ -10,7 +10,7 @@ namespace CustomProgram
         public GraphTraversal(INodeCollection collection)
         {
             _iterator = collection.CreateDepthFirstIterator();
-            _q = collection.DestinationQueue;
+            _q = collection.Builder.DestinationQ;
         }
         public NodeIterator Iterator
         {
@@ -37,8 +37,21 @@ namespace CustomProgram
                 {
                     HighlightPath(temp);
                     _q.Dequeue();
+                    _iterator.Reset();
                 }
             }
+        }
+        public List<AbstractNode> GetPath(AbstractNode end)
+        {
+            List<AbstractNode> _shortestpath = new List<AbstractNode>();
+            _shortestpath.Add(end);
+            AbstractNode temp = end;
+            while (_iterator.PathTable.ContainsKey(temp))
+            {
+                _shortestpath.Add(_iterator.PathTable[temp]);
+                temp = _iterator.PathTable[temp];
+            }
+            return _shortestpath;
         }
         public void RemoveAll()
         {
@@ -46,7 +59,7 @@ namespace CustomProgram
         }
         public void HighlightPath(AbstractNode end)
         {
-            foreach (AbstractNode node in _iterator.GetPath(end))
+            foreach (AbstractNode node in GetPath(end))
             {
                 if (node is DestinationNode) continue;
                 node.ToPath();

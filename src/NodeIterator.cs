@@ -10,12 +10,14 @@ namespace CustomProgram
         private Dictionary<AbstractNode, AbstractNode> _pathTable; // Path table to check which node is came from --> to find shortest path
         private HashSet<AbstractNode> _visited; // Store visited node
         private List<AbstractNode> _destinations; // Store destination
+        protected IGetNeighbors _neighbors;
         public NodeIterator(INodeCollection grid)
         {
             _grid = grid;
             _visited = new HashSet<AbstractNode>();
             _pathTable = new Dictionary<AbstractNode, AbstractNode>();
             _destinations = new List<AbstractNode>();
+            _neighbors = new GetNeighbors(grid.Builder);
         }
         public List<AbstractNode> Destinations // List of Destination or checkpoint, last index will be the last checkpoint
         {
@@ -23,17 +25,9 @@ namespace CustomProgram
             set { _destinations = value; }
         }
         // Get the path from path table which store the previos traversal node
-        public List<AbstractNode> GetPath(AbstractNode end)
+        public Dictionary<AbstractNode,AbstractNode> PathTable
         {
-            List<AbstractNode> _shortestpath = new List<AbstractNode>();
-            _shortestpath.Add(end);
-            AbstractNode temp = end;
-            while (_pathTable.ContainsKey(temp))
-            {
-                _shortestpath.Add(_pathTable[temp]);
-                temp = _pathTable[temp];
-            }
-            return _shortestpath;
+            get => _pathTable;
         }
         // Add to the path table to store the node where it comes from
         public void AddToPathTable(AbstractNode key, AbstractNode from)
@@ -67,7 +61,7 @@ namespace CustomProgram
         {
             node.Shape.Color = Color.RGBColor(34,211,242);
             if (node is DestinationNode) node.Shape.Color = node.GetColor();
-            foreach (AbstractNode item in GetNeighbors(node))
+            foreach (AbstractNode item in _neighbors.Get(node))
             {
                 if(item is DestinationNode || item is WallNode || Visited.Contains(item))
                 {
@@ -75,20 +69,6 @@ namespace CustomProgram
                 }
                 item.Shape.Color = Color.RGBColor(90,149,237);
             }
-        }
-        public List<AbstractNode> GetNeighbors(AbstractNode node) // Get List of Neighbor during traversal
-        {
-            AbstractNode temp;
-            List<AbstractNode> neighbors = new List<AbstractNode>();
-            temp = _grid.Fetch(new Coordinate(node.Position.Row - 1, node.Position.Column));
-            if (temp != null) neighbors.Add(temp);
-            temp = _grid.Fetch(new Coordinate(node.Position.Row, node.Position.Column + 1));
-            if (temp != null) neighbors.Add(temp);
-            temp = _grid.Fetch(new Coordinate(node.Position.Row + 1, node.Position.Column));
-            if (temp != null) neighbors.Add(temp);
-            temp = _grid.Fetch(new Coordinate(node.Position.Row, node.Position.Column - 1));
-            if (temp != null) neighbors.Add(temp);
-            return neighbors;
         }
         public abstract void AddNode(AbstractNode node); // Add node the specific data structure of iterator
         public abstract bool HasNext(); // Check if is there any node left

@@ -22,7 +22,7 @@ namespace CustomProgram
         public override void Draw()
         {
             base.Draw();
-            Font font = Constants.Font;
+            Font font = Constants.ExtraFont;
             double fontMarginLeft = Size / 2 - 10;
             double fontMarginTop = Size / 2 -  SplashKit.TextHeight(_num.ToString(), font, 30)/2;
             SplashKit.DrawText(_num.ToString(), Color.Black, font, 30, Shape.X + fontMarginLeft, Shape.Y + fontMarginTop);

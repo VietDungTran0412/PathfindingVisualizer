@@ -8,14 +8,14 @@ namespace CustomProgram
         private INodeCollection _collection;
         private GraphTraversal _graphTraversal;
         private bool _running;
-        private Client _client;
+        private IOnClick _click;
         private Counter _count;
-        public MainScene(Client client)
+        public MainScene(IOnClick click)
         {
             _collection = new Grid(new GraphBuilder());
             _graphTraversal = new GraphTraversal(_collection);
             _running = false;
-            _client = client;
+            _click = click;
             _count = new Counter(5,5);
         }
         public INodeCollection NodeCollection
@@ -34,7 +34,7 @@ namespace CustomProgram
         public void Display()
         {
             _collection.UpdateEvent(_running);
-            if(SplashKit.KeyDown(KeyCode.QKey) && _collection.DestinationQueue.Count == 2)
+            if(SplashKit.KeyDown(KeyCode.QKey) && _collection.Builder.DestinationQ.Count == 2)
             {
                 _running = true;
             }
@@ -50,13 +50,13 @@ namespace CustomProgram
                 }
                 _count.Decrease();
             }
-            if(_collection.DestinationQueue.Count == 0 || _graphTraversal.IsEnd())
+            if(_collection.Builder.DestinationQ.Count == 0 || _graphTraversal.IsEnd())
             {
                 _running = false;
             }
-            if (SplashKit.KeyDown(KeyCode.BKey))
+            if (SplashKit.KeyDown(KeyCode.EscapeKey))
             {
-                _client.Scene = new MenuScene(_client);
+                _click.Notify();
             }
         }
     }

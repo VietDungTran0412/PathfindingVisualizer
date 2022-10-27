@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SplashKitSDK;
 namespace CustomProgram
 {
     // Builder pattern to build the grid or graph by itself
@@ -9,16 +10,26 @@ namespace CustomProgram
         private int _size;
         private AbstractNode[,] _graph;
         private Queue<AbstractNode> _destinationQ;
+        private RandomMazeGenerator _generator;
         public GraphBuilder()
         {
             _size = 20;
             _graph = new AbstractNode[_size, _size];
             _destinationQ = new Queue<AbstractNode>();
             Clear();
+            _generator = new RandomMazeGenerator(this, new GetNeighbors(this));
         }
         public int Size
         {
             get { return _size; }
+        }
+        public AbstractNode Fetch(Coordinate coordinate)
+        {
+            if (coordinate.Column < 0 || coordinate.Column >= Size || coordinate.Row >= Size || coordinate.Row < 0)
+            {
+                return null;
+            }
+            return Graph[coordinate.Row, coordinate.Column];
         }
         public Queue<AbstractNode> DestinationQ
         {
@@ -38,6 +49,13 @@ namespace CustomProgram
                 }
             }
             _destinationQ.Clear();
+        }
+        public void SetRandomMaze()
+        {
+            SplashKit.Delay(40);
+            Clear();
+            _generator.Reset();
+            _generator.Generate();
         }
         public void RemoveAt()
         {

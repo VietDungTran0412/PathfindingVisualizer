@@ -60,7 +60,7 @@ namespace CustomProgram
             AbstractNode cur = popItem.Node;
             Highlight(cur);
             _closeSet.Add(cur);
-            List<AbstractNode> neighbbors = GetNeighbors(cur);
+            List<AbstractNode> neighbbors = _neighbors.Get(cur);
             foreach(AbstractNode node in neighbbors)
             {               
                 if (node is WallNode || _closeSet.Contains(node)) continue;
