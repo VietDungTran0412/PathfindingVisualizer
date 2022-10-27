@@ -10,14 +10,26 @@ namespace CustomProgram
         private Dictionary<AbstractNode, AbstractNode> _pathTable; // Path table to check which node is came from --> to find shortest path
         private HashSet<AbstractNode> _visited; // Store visited node
         private List<AbstractNode> _destinations; // Store destination
-        protected IGetNeighbors _neighbors;
         public NodeIterator(INodeCollection grid)
         {
             _grid = grid;
             _visited = new HashSet<AbstractNode>();
             _pathTable = new Dictionary<AbstractNode, AbstractNode>();
             _destinations = new List<AbstractNode>();
-            _neighbors = new GetNeighbors(grid.Builder);
+        }
+        public List<AbstractNode> GetNeighbors(AbstractNode node) // Get Neighbors of the current node
+        {
+            List<AbstractNode> neighbors = new List<AbstractNode>();
+            AbstractNode temp;
+            temp = _grid.Builder.Fetch(new Coordinate(node.Position.Row - 1, node.Position.Column));
+            if (temp != null) neighbors.Add(temp);
+            temp = _grid.Builder.Fetch(new Coordinate(node.Position.Row, node.Position.Column + 1));
+            if (temp != null) neighbors.Add(temp);
+            temp = _grid.Builder.Fetch(new Coordinate(node.Position.Row + 1, node.Position.Column));
+            if (temp != null) neighbors.Add(temp);
+            temp = _grid.Builder.Fetch(new Coordinate(node.Position.Row, node.Position.Column - 1));
+            if (temp != null) neighbors.Add(temp);
+            return neighbors;
         }
         public List<AbstractNode> Destinations // List of Destination or checkpoint, last index will be the last checkpoint
         {
@@ -61,7 +73,7 @@ namespace CustomProgram
         {
             node.Shape.Color = Color.RGBColor(34,211,242);
             if (node is DestinationNode) node.Shape.Color = node.GetColor();
-            foreach (AbstractNode item in _neighbors.Get(node))
+            foreach (AbstractNode item in GetNeighbors(node))
             {
                 if(item is DestinationNode || item is WallNode || Visited.Contains(item))
                 {

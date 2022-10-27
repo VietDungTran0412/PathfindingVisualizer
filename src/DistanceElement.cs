@@ -2,7 +2,7 @@
 namespace CustomProgram
 {
     // Distance element to store node and its distance like gcost, hcost and fcost.
-    // Only use to stored data
+    // Only use to store data and does not getting involve in the architecture
     public class DistanceElement
     {
         private AbstractNode _node;

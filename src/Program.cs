@@ -1,7 +1,12 @@
+// Custom Program in Object Oriented Programming COS20007 -- Semester 2
+// Student's Name: Dung Tran
+// Student ID: 103486496
+// Tutorial Session: Friday - 2:30pm
+// Tutor: Edward Greenaway
+// Convenor: Dr Charlotte Pierce
+// Creating  Pathfinding Visualizer Tool to visualize differnt pathfinding algorithm in a grid of 20x20
+// Following OOP principle and Design Patterns << Builder, Iterator, Strategy, Observer, Factory >>
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using SplashKitSDK;
 namespace CustomProgram
 {

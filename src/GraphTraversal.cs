@@ -13,12 +13,12 @@ namespace CustomProgram
             _iterator = collection.CreateDepthFirstIterator();
             _q = collection.Builder.DestinationQ;
         }
-        public NodeIterator Iterator
+        public NodeIterator Iterator // Public the iterator
         {
             get { return _iterator; }
             set { _iterator = value; }
         }
-        public void FindPath()
+        public void FindPath() // Find path by looping to every node of the iterator 
         {
             if (_q.Count == 2)
             {
@@ -37,7 +37,7 @@ namespace CustomProgram
                 }
             }
         }
-        public List<AbstractNode> GetPath(AbstractNode end)
+        public List<AbstractNode> GetPath(AbstractNode end) // Get the shortest path
         {
             List<AbstractNode> _shortestpath = new List<AbstractNode>();
             _shortestpath.Add(end);
@@ -49,7 +49,7 @@ namespace CustomProgram
             }
             return _shortestpath;
         }
-        public void RemoveAll()
+        public void RemoveAll() // Remove all iterator
         {
             _iterator.Reset();
         }

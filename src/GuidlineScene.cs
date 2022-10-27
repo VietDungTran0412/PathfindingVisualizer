@@ -18,7 +18,7 @@ namespace CustomProgram
             _title = title;
             LazySetup();
         }
-        private void LazySetup()
+        private void LazySetup() // Lazy setup
         {
             string[] message = new string[] { "Press 'Escape' to escape back to menu.", "Press 'Q' to run algorithm.",
                 "Press 'D' to add checkpoint/destination.","Press 'W' to add Wall.","Double click on Wall to remove.",

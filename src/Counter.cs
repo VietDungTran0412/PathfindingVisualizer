@@ -16,13 +16,20 @@ namespace CustomProgram
         {
             int edge = 20; // Maximum is 20
             if (_limit >= edge) return;
-            _limit += 5;
+            if(_limit == 0)
+            {
+                _limit += 1;
+            }
+            else
+            {
+                _limit *= 2;
+            }
         }
         // Decrease the animation speed
         public void DecreaseLimit()
         {
             if (_limit == 0) return;
-            _limit -= 5;
+            _limit = (_limit - _limit%2)/2;
         }
         // Decrease the counter
         public void Decrease()
