@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 namespace CustomProgram
 {
+    // Generate Randome Maze in the Graph
     public class RandomMazeGenerator
     {
         private GraphBuilder _builder;

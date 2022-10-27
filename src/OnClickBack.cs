@@ -1,6 +1,7 @@
 ﻿using System;
 namespace CustomProgram
 {
+    // Click back to the menu
     public class OnClickBack:IOnClick
     {
         private readonly Client _client;

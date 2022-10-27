@@ -1,6 +1,7 @@
 ﻿using System;
 namespace CustomProgram
 {
+    // Click to guidline scene
     public class OnClickGuidline:IOnClick
     {
         private Client _client;

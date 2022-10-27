@@ -3,10 +3,11 @@ using SplashKitSDK;
 using System.Collections.Generic;
 namespace CustomProgram
 {
+    // Graph Traversal to control and manage the traversal
     public class GraphTraversal
     {
         private NodeIterator _iterator;
-        private Queue<AbstractNode> _q;
+        private Queue<AbstractNode> _q; // Store destination Queue
         public GraphTraversal(INodeCollection collection)
         {
             _iterator = collection.CreateDepthFirstIterator();
@@ -16,11 +17,6 @@ namespace CustomProgram
         {
             get { return _iterator; }
             set { _iterator = value; }
-        }
-        public bool IsEnd()
-        {
-            if (!_iterator.HasNext()) return true;
-            return false;
         }
         public void FindPath()
         {

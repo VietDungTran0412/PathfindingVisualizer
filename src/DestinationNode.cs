@@ -3,6 +3,7 @@ using SplashKitSDK;
 
 namespace CustomProgram
 {
+    // Node checkpoint/destination to travel
     public class DestinationNode : AbstractNode
     {
         private int _num;

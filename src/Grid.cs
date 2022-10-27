@@ -3,6 +3,7 @@ using SplashKitSDK;
 using System.Collections.Generic;
 namespace CustomProgram
 {
+    // Implements the interface INodeCollection and control the process of building the graph
     public class Grid : INodeCollection
     {
         private GraphBuilder _builder;
@@ -27,6 +28,7 @@ namespace CustomProgram
         {
             _builder.Clear();
         }
+        // Create different Iterator
         public NodeIterator CreateDepthFirstIterator()
         {
             return new DepthFirstIterator(this);

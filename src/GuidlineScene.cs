@@ -3,6 +3,7 @@ using SplashKitSDK;
 using System.Collections.Generic;
 namespace CustomProgram
 {
+    // Guidline scene to guidline user how to use the program
     public class GuidlineScene:IScene
     {
         private List<string> _readlines;
@@ -31,6 +32,7 @@ namespace CustomProgram
             _backButton.Rectangle.Height = 70;
             _backButton.Rectangle.Color = Color.RGBColor(76, 214, 245);
         }
+        // Display readline tutorial
         private void DisplayReadLine()
         {
             double offsetX = 50;

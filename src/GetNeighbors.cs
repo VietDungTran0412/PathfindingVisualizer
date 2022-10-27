@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 namespace CustomProgram
 {
+    // Get neighbors Strategy applying strategy pattern
     public class GetNeighbors : IGetNeighbors
     {
         private GraphBuilder _builder;
