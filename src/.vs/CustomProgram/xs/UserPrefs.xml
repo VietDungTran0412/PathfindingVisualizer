@@ -1,40 +1,46 @@
 ﻿<Properties StartupConfiguration="{469165E8-8226-4E5D-BF2C-CF30F950FBA7}|Default">
-  <MonoDevelop.Ide.ItemProperties.CustomProgram PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="RandomMazeGenerator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Client.cs">
     <Files>
-      <File FileName="Shape.cs" Line="5" Column="22" />
-      <File FileName="Button.cs" Line="34" Column="54" />
-      <File FileName="GraphTraversal.cs" Line="13" Column="49" />
-      <File FileName="MenuScene.cs" Line="1" Column="1" />
-      <File FileName="MainScene.cs" Line="48" Column="1" />
-      <File FileName="OnClickAStar.cs" Line="1" Column="1" />
-      <File FileName="Rectangle.cs" Line="1" Column="1" />
-      <File FileName="DepthFirstIterator.cs" Line="31" Column="58" />
-      <File FileName="DistanceElement.cs" Line="1" Column="1" />
-      <File FileName="GraphBuilder.cs" Line="107" Column="1" />
+      <File FileName="Shape.cs" Line="30" Column="36" />
+      <File FileName="Button.cs" Line="20" Column="26" />
+      <File FileName="GraphTraversal.cs" Line="54" Column="31" />
+      <File FileName="MenuScene.cs" Line="48" Column="50" />
+      <File FileName="MainScene.cs" Line="38" Column="37" />
+      <File FileName="OnClickAStar.cs" Line="11" Column="10" />
+      <File FileName="Rectangle.cs" Line="21" Column="19" />
+      <File FileName="DepthFirstIterator.cs" Line="31" Column="56" />
+      <File FileName="DistanceElement.cs" Line="5" Column="79" />
       <File FileName="DistanceHeap.cs" Line="1" Column="1" />
-      <File FileName="Counter.cs" Line="18" Column="1" />
-      <File FileName="Grid.cs" Line="19" Column="44" />
-      <File FileName="INodeCollection.cs" Line="7" Column="44" />
-      <File FileName="NodeIterator.cs" Line="5" Column="2" />
-      <File FileName="BreadthFirstIterator.cs" Line="30" Column="58" />
-      <File FileName="AStarIterator.cs" Line="63" Column="59" />
-      <File FileName="IGetNeighbors.cs" Line="2" Column="34" />
-      <File FileName="GetNeighbors.cs" Line="2" Column="34" />
-      <File FileName="RandomMazeGenerator.cs" Line="26" Column="90" />
+      <File FileName="Counter.cs" Line="25" Column="29" />
+      <File FileName="Grid.cs" Line="23" Column="36" />
+      <File FileName="INodeCollection.cs" Line="5" Column="66" />
+      <File FileName="NodeIterator.cs" Line="12" Column="71" />
+      <File FileName="BreadthFirstIterator.cs" Line="30" Column="56" />
+      <File FileName="AStarIterator.cs" Line="18" Column="39" />
+      <File FileName="OnClickDFS.cs" Line="15" Column="45" />
+      <File FileName="OnClickBack.cs" Line="4" Column="30" />
+      <File FileName="OnClickBFS.cs" Line="14" Column="45" />
+      <File FileName="OnClickExit.cs" Line="1" Column="1" />
+      <File FileName="GuidlineScene.cs" Line="21" Column="47" />
+      <File FileName="Client.cs" Line="20" Column="43" />
+      <File FileName="Constants.cs" Line="9" Column="78" />
+      <File FileName="OnClickGuidline.cs" Line="4" Column="31" />
+      <File FileName="DestinationNode.cs" Line="6" Column="45" />
+      <File FileName="AbstractNode.cs" Line="1" Column="1" />
+      <File FileName="Coordinate.cs" Line="1" Column="1" />
+      <File FileName="IOnClick.cs" Line="1" Column="1" />
+      <File FileName="IScene.cs" Line="1" Column="1" />
+      <File FileName="NormalNode.cs" Line="1" Column="1" />
+      <File FileName="WallNode.cs" Line="1" Column="1" />
+      <File FileName="GraphBuilder.cs" Line="115" Column="35" />
+      <File FileName="myeasylog.log" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="11" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CustomProgram" expanded="True">
-            <Node name="CustomProgram" expanded="True">
-              <Node name="RandomMazeGenerator.cs" selected="True" />
-            </Node>
+            <Node name="CustomProgram" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -43,5 +49,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.CustomProgram PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

@@ -15,7 +15,10 @@ namespace CustomProgram
         public void IncreaseLimit()
         {
             int edge = 20; // Maximum is 20
-            if (_limit >= edge) return;
+            if (_limit >= edge)
+            {
+                return;
+            }
             if(_limit == 0)
             {
                 _limit += 1;
@@ -28,13 +31,18 @@ namespace CustomProgram
         // Decrease the animation speed
         public void DecreaseLimit()
         {
-            if (_limit == 0) return;
+            if (_limit == 0) {
+                return;
+            }
             _limit = (_limit - _limit%2)/2;
         }
         // Decrease the counter
         public void Decrease()
         {
-            if (_count == 0) return;
+            if (_count == 0)
+            {
+                return;
+            }
             _count -= 1;
         }
         // Reset the counter to limit and count down

@@ -98,7 +98,10 @@ namespace CustomProgram
         }
         public void AddDestination() // Add destination to the graph
         {
-            if (_destinationQ.Count == 2) return;
+            if (_destinationQ.Count == 2)
+            {
+                return;
+            }
             for (int i = 0; i < _size; i++)
             {
                 for (int j = 0; j < _size; j++)

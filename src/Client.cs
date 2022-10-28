@@ -7,16 +7,22 @@ namespace CustomProgram
     {
         private IScene _scene;
         private Window _window;
-        public Client()
+        public Client(Window window)
         {
             _scene = new MenuScene(this);
-            _window = new Window("Tim Duong Vao Tim Em", 800, 800);
+            _window = window;
         }
         // Display scene
         public void DisplayScene()
         {
-            SplashKit.ClearScreen(Scene.GetBackgroundColor());
-            Scene.Display();
+            while (!SplashKit.QuitRequested())
+            {
+                SplashKit.ProcessEvents();
+                SplashKit.ClearScreen(Scene.GetBackgroundColor());
+                Scene.Display();
+                SplashKit.RefreshScreen(60);
+            }
+
         }
         // Turn off the program
         public void Close()

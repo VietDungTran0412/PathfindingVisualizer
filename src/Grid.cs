@@ -14,11 +14,26 @@ namespace CustomProgram
         public void UpdateEvent(bool running)
         {
             _builder.Draw();
-            if (SplashKit.KeyDown(KeyCode.WKey) && !running) _builder.AddWall();
-            if (SplashKit.KeyDown(KeyCode.DKey) && !running) _builder.AddDestination();
-            if (SplashKit.KeyDown(KeyCode.RKey) && !running) _builder.Clear();
-            if (SplashKit.KeyDown(KeyCode.TKey) && !running) _builder.SetRandomMaze();
-            if (SplashKit.MouseClicked(MouseButton.LeftButton) && !running) _builder.RemoveAt();
+            if (SplashKit.KeyDown(KeyCode.WKey) && !running)
+            {
+                _builder.AddWall();
+            }
+            if (SplashKit.KeyDown(KeyCode.DKey) && !running)
+            {
+                _builder.AddDestination();
+            }
+            if (SplashKit.KeyDown(KeyCode.RKey) && !running)
+            {
+                _builder.Clear();
+            }
+            if (SplashKit.KeyDown(KeyCode.TKey) && !running)
+            {
+                _builder.SetRandomMaze();
+            }
+            if (SplashKit.MouseClicked(MouseButton.LeftButton) && !running)
+            {
+                _builder.RemoveAt();
+            }
         }
         public GraphBuilder Builder
         {

@@ -15,18 +15,9 @@ namespace CustomProgram
     {
         public static void Main()
         {
-            Client client = new Client();
-            while (!SplashKit.QuitRequested())
-            {
-                SplashKit.ProcessEvents();
-                SplashKit.ClearScreen(Color.Black);
-
-                // Client Display
-                client.DisplayScene();
-
-
-                SplashKit.RefreshScreen(60);
-            }
+            // Display the client control every event in the program
+            Client client = new Client(new Window("Pathfinding Visualizer", 800, 800));
+            client.DisplayScene();
         }
     }
 }

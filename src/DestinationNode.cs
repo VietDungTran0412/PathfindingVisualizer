@@ -16,9 +16,9 @@ namespace CustomProgram
         {
             return Color.RGBColor(237,156,90);
         }
-        public override void ToPath()
+        public override void ToPath() // To Path if the node is in path
         {
-            return;
+            Shape.Color = GetColor();
         }
         public override void Draw()
         {

@@ -43,9 +43,18 @@ namespace CustomProgram
             {
                 _running = true;
             }
-            if (SplashKit.KeyDown(KeyCode.RKey)) _graphTraversal.RemoveAll();
-            if (SplashKit.KeyTyped(KeyCode.EqualsKey)) _count.DecreaseLimit();
-            if (SplashKit.KeyTyped(KeyCode.MinusKey)) _count.IncreaseLimit();
+            if (SplashKit.KeyDown(KeyCode.RKey))
+            {
+                _graphTraversal.RemoveAll();
+            }
+            if (SplashKit.KeyTyped(KeyCode.EqualsKey))
+            {
+                _count.DecreaseLimit();
+            }
+            if (SplashKit.KeyTyped(KeyCode.MinusKey))
+            {
+                _count.IncreaseLimit();
+            }
             if (_running)
             {
                 if (_count.Tick == 0)

@@ -22,13 +22,25 @@ namespace CustomProgram
             List<AbstractNode> neighbors = new List<AbstractNode>();
             AbstractNode temp;
             temp = _grid.Builder.Fetch(new Coordinate(node.Position.Row - 1, node.Position.Column));
-            if (temp != null) neighbors.Add(temp);
+            if (temp != null)
+            {
+                neighbors.Add(temp);
+            }
             temp = _grid.Builder.Fetch(new Coordinate(node.Position.Row, node.Position.Column + 1));
-            if (temp != null) neighbors.Add(temp);
+            if (temp != null)
+            {
+                neighbors.Add(temp);
+            }
             temp = _grid.Builder.Fetch(new Coordinate(node.Position.Row + 1, node.Position.Column));
-            if (temp != null) neighbors.Add(temp);
+            if (temp != null)
+            {
+                neighbors.Add(temp);
+            }
             temp = _grid.Builder.Fetch(new Coordinate(node.Position.Row, node.Position.Column - 1));
-            if (temp != null) neighbors.Add(temp);
+            if (temp != null)
+            {
+                neighbors.Add(temp);
+            }
             return neighbors;
         }
         public List<AbstractNode> Destinations // List of Destination or checkpoint, last index will be the last checkpoint
@@ -44,7 +56,10 @@ namespace CustomProgram
         // Add to the path table to store the node where it comes from
         public void AddToPathTable(AbstractNode key, AbstractNode from)
         {
-            if (Visited.Contains(key)) return;
+            if (Visited.Contains(key))
+            {
+                return;
+            }
             if (_pathTable.ContainsKey(key))
             {
                 _pathTable[key] = from;
@@ -56,7 +71,10 @@ namespace CustomProgram
         }
         public bool CanVisit(AbstractNode node)
         {
-            if (node is WallNode || _visited.Contains(node)) return false;
+            if (node is WallNode || _visited.Contains(node))
+            {
+                return false;
+            }
             return true;
         }
         public virtual void Reset()
@@ -72,7 +90,10 @@ namespace CustomProgram
         public void Highlight(AbstractNode node) // Highlight the current node and its neighbor
         {
             node.Shape.Color = Color.RGBColor(34,211,242);
-            if (node is DestinationNode) node.Shape.Color = node.GetColor();
+            if (node is DestinationNode)
+            {
+                node.Shape.Color = node.GetColor();
+            }
             foreach (AbstractNode item in GetNeighbors(node))
             {
                 if(item is DestinationNode || item is WallNode || Visited.Contains(item))

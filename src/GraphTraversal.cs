@@ -57,7 +57,6 @@ namespace CustomProgram
         {
             foreach (AbstractNode node in GetPath(end))
             {
-                if (node is DestinationNode) continue;
                 node.ToPath();
             }
         }
