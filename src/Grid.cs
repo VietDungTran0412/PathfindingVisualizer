@@ -52,7 +52,7 @@ namespace CustomProgram
         {
             return new BreadthFirstIterator(this);
         }
-        public AStarIterator CreateAStarIterator()
+        public NodeIterator CreateAStarIterator()
         {
             return new AStarIterator(this);
         }

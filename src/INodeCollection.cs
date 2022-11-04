@@ -9,7 +9,7 @@ namespace CustomProgram
         public void Reset();
         public NodeIterator CreateDepthFirstIterator();
         public NodeIterator CreateBreadthFirstIterator();
-        public AStarIterator CreateAStarIterator();
+        public NodeIterator CreateAStarIterator();
         public void UpdateEvent(bool running);
     }
 

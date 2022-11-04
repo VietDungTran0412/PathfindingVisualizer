@@ -27,7 +27,7 @@ namespace CustomProgram
         public int Height
         {
             get => _height;
-            set => _height = value;
+            set => _height = value; 
         }
         public Color Color
         {

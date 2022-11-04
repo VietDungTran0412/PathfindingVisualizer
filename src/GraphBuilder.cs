@@ -60,7 +60,10 @@ namespace CustomProgram
                 {
                     int row = rand.Next(0, Size);
                     int col = rand.Next(0, Size);
-                    if (Graph[row, col] is DestinationNode) continue;
+                    if (Graph[row, col] is DestinationNode)
+                    {
+                        continue;
+                    }
                     if (!visited.Contains($"{row}-{col}"))
                     {
                         Graph[row, col] = new WallNode(Size * 2, new Coordinate(row, col));
