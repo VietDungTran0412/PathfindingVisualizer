@@ -35,7 +35,7 @@ namespace CustomProgram
                 _builder.RemoveAt();
             }
         }
-        public GraphBuilder Builder
+        public IGraphBuilder Builder
         {
             get => _builder;
         }
