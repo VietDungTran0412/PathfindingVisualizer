@@ -12,7 +12,10 @@ namespace CustomProgram
         }
         public override void AddNode(AbstractNode node)
         {
-            if (CanVisit(node)) _q.Enqueue(node);
+            if (CanVisit(node))
+            {
+                _q.Enqueue(node);
+            }
         }
         public override void Reset()
         {

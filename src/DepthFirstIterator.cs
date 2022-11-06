@@ -13,7 +13,10 @@ namespace CustomProgram
         }
         public override void AddNode(AbstractNode node)
         {
-            if(CanVisit(node)) _st.Push(node); 
+            if (CanVisit(node))
+            {
+                _st.Push(node);
+            }
         }
         public override bool HasNext()
         {

@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Grid.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="IGraphBuilder.cs">
     <Files>
       <File FileName="Shape.cs" Line="30" Column="37" />
       <File FileName="Button.cs" Line="20" Column="26" />
@@ -15,8 +15,8 @@
       <File FileName="DistanceElement.cs" Line="5" Column="79" />
       <File FileName="DistanceHeap.cs" Line="95" Column="14" />
       <File FileName="Counter.cs" Line="45" Column="14" />
-      <File FileName="Grid.cs" Line="55" Column="16" />
-      <File FileName="INodeCollection.cs" Line="12" Column="28" />
+      <File FileName="Grid.cs" Line="38" Column="29" />
+      <File FileName="INodeCollection.cs" Line="8" Column="29" />
       <File FileName="NodeIterator.cs" Line="33" Column="14" />
       <File FileName="BreadthFirstIterator.cs" Line="30" Column="56" />
       <File FileName="AStarIterator.cs" Line="18" Column="39" />
@@ -35,15 +35,18 @@
       <File FileName="IScene.cs" Line="1" Column="1" />
       <File FileName="NormalNode.cs" Line="1" Column="1" />
       <File FileName="WallNode.cs" Line="1" Column="1" />
-      <File FileName="GraphBuilder.cs" Line="66" Column="22" />
       <File FileName="myeasylog.log" Line="1" Column="1" />
       <File FileName="Program.cs" Line="19" Column="85" />
+      <File FileName="GraphBuilder.cs" Line="8" Column="45" />
+      <File FileName="IGraphBuilder.cs" Line="14" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CustomProgram" expanded="True">
-            <Node name="CustomProgram" expanded="True" />
+            <Node name="CustomProgram" expanded="True">
+              <Node name="IGraphBuilder.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
